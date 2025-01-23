@@ -1,6 +1,7 @@
 # FashionCo Website
 
 Welcome to the FashionCo Website! This website allows users to browse and shop for various clothing items, view details about the store, and get in touch with us through the contact page.
+visit the website: https://vakalayamini.github.io/Landing_Page/
 
 ## Features
 - **Homepage**: Displays a collection of featured clothing items and other important information.
