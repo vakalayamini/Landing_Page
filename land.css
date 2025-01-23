@@ -1,0 +1,362 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    opacity: 0; /* Initially hidden for page load animation */
+    animation: fadeInPage 1s forwards; /* Animation for entire page */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Animation for page fade-in */
+@keyframes fadeInPage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    background-color: #f1ab71;
+    color: white;
+    animation: fadeInHeader 2s ease-in-out;
+    position: relative; /* Added to position the image */
+}
+
+.header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Serif;
+    transition: transform 0.3s, color 0.3s;
+    animation: enlargeLogo 3s forwards;
+}
+
+.nav-links {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center; /* Center the buttons */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Add spacing between buttons */
+}
+
+.nav-links li a {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: transform 0.3s, color 0.3s, letter-spacing 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff5a5f;
+    transform: translateY(-5px);
+    letter-spacing: 2px;
+}
+
+/* Add animation to the header buttons */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.nav-links li a {
+    animation: bounceIn 0.5s ease-out;
+}
+
+/* Animation to enlarge and change color of the logo */
+@keyframes enlargeLogo {
+    0% {
+        font-size: 2em;
+        color: white;
+    }
+    100% {
+        font-size: 4em;
+        color: #c01595;
+    }
+}
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: url('bg.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 5em 0;
+    animation: slideIn 1.5s ease-in-out; /* Animation for hero section */
+}
+
+.hero h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    animation: textBounce 1s ease-in-out; /* Bounce effect for heading */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    animation: fadeInUp 1s ease-out; /* Fade-in effect for text */
+}
+
+.hero button {
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero button a {
+    color: white;
+}
+
+/* Hover and Active States for Buttons */
+.hero button:hover {
+    background-color: #ff8080; /* Lighter shade on hover */
+    transform: scale(1.05);   /* Slightly enlarge */
+}
+
+.hero button:active {
+    background-color: #cc3333; /* Darker shade on click */
+    transform: scale(0.95);    /* Slightly shrink */
+}
+.hero {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Distribute space between the elements */
+    align-items: center; /* Align items vertically */
+}
+
+.hero .hero-image {
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.hero .hero-image img {
+    width: 300px; /* Adjust the size of the image */
+    height: 350px;
+}
+
+
+/* Scrolling Offers Section */
+.offers {
+    background-color: #073f70;
+    padding: 3em 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInOffers 2s ease-in-out; /* Animation for offers */
+}
+
+.offer-message {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f7b4b4;
+    white-space: nowrap;
+    position: absolute;
+    animation: scrollLeft 10s linear infinite, rotateMessage 10s linear infinite;
+}
+
+
+/* Animation for Scrolling Offers */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+
+/* Products Section */
+.products {
+    text-align: center;
+    padding: 4em 0;
+    background-color: #bcf3d7;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+/* Hover Effect for Product Cards */
+.product-item:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.product-item:hover img {
+    transform: scale(1.1); /* Slightly zoom in on hover */
+    filter: brightness(1.1); /* Brighten the image */
+}
+
+/* About Section */
+.about {
+    background-color: #99ccee;
+    text-align: center;
+    padding: 4em 0;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f1b8e9;
+    padding: 4em 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact form input,
+.contact form textarea {
+    padding: 1em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus Effect for Form Fields */
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: #ff5a5f;
+    box-shadow: 0 0 5px rgba(255, 90, 95, 0.5);
+}
+
+.contact form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.7em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover and Active States for Form Button */
+.contact form button:hover {
+    background-color: #555; /* Lighter shade on hover */
+}
+
+.contact form button:active {
+    background-color: #222; /* Darker shade on click */
+    transform: scale(0.95); /* Slightly shrink */
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+/* Hover Effect for Footer Links */
+.social-links a:hover {
+    color: #e9660e; /* Highlight color for footer links on hover */
+}
+
+/* Animation for Text Effects */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
